@@ -1,6 +1,14 @@
-<nav style="display:flex; gap: 12px; margin-bottom:16px;">
-  <a routerLink = "/people"> People </a>
-  <a routerLink = "/expenses"> Expenses </a>
-</nav>
+<div class="nav">
+  <div class="nav-inner">
+    <div class="brand">Expense Splitter</div>
 
-<router-outlet></router-outlet>
+    <div class="links">
+      <a class="link" routerLink="/people" routerLinkActive="active">People</a>
+      <a class="link" routerLink="/expenses" routerLinkActive="active">Expenses</a>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <router-outlet></router-outlet>
+</div>
