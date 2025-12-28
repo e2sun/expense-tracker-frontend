@@ -1,8 +1,25 @@
-<h2> Expenses </h2>
+<h2>Expenses</h2>
+
+<div style="display:flex; flex-direction:column; gap:10px; max-width:420px; margin-bottom:16px;">
+  <input [(ngModel)]="description" name="description" placeholder="Description" />
+
+  <input [(ngModel)]="amount" name="amount" type="number" step="0.01" placeholder="Amount" />
+
+  <select [(ngModel)]="paidByPersonId" name="paidByPersonId">
+    <option [ngValue]="null">-- Paid by --</option>
+    <option *ngFor="let p of people" [ngValue]="p.id">{{ p.name }}</option>
+  </select>
+
+  <select multiple [(ngModel)]="participantPersonIds" name="participantPersonIds" size="6">
+    <option *ngFor="let p of people" [ngValue]="p.id">{{ p.name }}</option>
+  </select>
+
+  <button (click)="addExpense()">Add Expense</button>
+</div>
 
 <ul>
-    <li *ngFor="let e of expenses"> 
-        {{ e.id }} - {{ e.description }} - ${{ e.amount }}
-    </li>
+  <li *ngFor="let e of expenses">
+    {{ e.id }} - {{ e.description }} - ${{ e.amount }}
+    (paid by: {{ e.paidBy?.name }})
+  </li>
 </ul>
-
