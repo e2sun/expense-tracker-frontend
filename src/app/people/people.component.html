@@ -1,1 +1,8 @@
-<p>people works!</p>
+<h2> People </h2>>
+
+<input [(ngModel)]="name" placeholder="Name"/>
+<button (click) = "addPerson()"> Add </button>
+
+<ul>
+    <li *ngFor="let p of people"> {{ p.id }} - {{ p.name }}</li>
+</ul>

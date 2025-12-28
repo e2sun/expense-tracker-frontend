@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService, Person } from './people.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-people',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './people.component.html',
   styleUrl: './people.component.css'
 })
